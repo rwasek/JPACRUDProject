@@ -34,4 +34,16 @@ public class StockController {
 		model.addAttribute("stock", s);
 		return "stockDetail";
 	}
+	
+	@RequestMapping(path="getStockSymbol.do")
+	public String findStockBySymbol(@RequestParam String symbol, Model model) {
+		Stock s = dao.findBySymbol(symbol);
+		if (s != null) {
+		model.addAttribute("stock", s);
+		return "stockDetail";
+		}
+		else {
+			return "error";
+		}
+	}
 }

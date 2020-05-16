@@ -11,8 +11,8 @@
 
 	<h1>Welcome to the Stock Ticker App!</h1>
 	
-	<form action="getStock.do" method="GET">
-  		Stock ID: <input type="text" name="sid" />
+	<form action="getStockSymbol.do" method="GET">
+  		Search for a Stock by Symbol (example: AAL): $<input type="text" name="symbol" />
   		<input type="submit" value="Show Stock" />
 	</form>
 	
