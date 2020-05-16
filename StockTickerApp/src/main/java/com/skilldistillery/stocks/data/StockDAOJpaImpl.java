@@ -19,5 +19,10 @@ public class StockDAOJpaImpl implements StockDAO {
 	public Stock findById(int id) {
 		return em.find(Stock.class, id);
 	}
+	
+	// ActorDAOImpl as reference.  Dont do the transaction stuff!
+	// we just do the em.persist when create
+	// em.find
+	// em.flush
 
 }
