@@ -1,5 +1,7 @@
 package com.skilldistillery.stocks.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,17 @@ public class StockController {
 	
 	@Autowired
 	private StockDAO dao;
+	
+	
+	@RequestMapping(path= {"/", "home.do"})
+	public String index(Model model) {
+		List<Stock> stocks = dao.findAll();
+		model.addAttribute("stocks", stocks);
+		return "index";
+//	  return "WEB-INF/index.jsp";
+	  // return "index"; // if using a ViewResolver.
+	}
+	
 	
 	@RequestMapping(path="getStock.do")
 	public String findStock(@RequestParam Integer sid, Model model) {
