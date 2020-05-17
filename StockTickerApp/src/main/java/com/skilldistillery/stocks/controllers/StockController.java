@@ -49,19 +49,19 @@ public class StockController {
 		}
 	}
 	
-	@RequestMapping(path="createNewStock.do", method=RequestMethod.GET)
+	@RequestMapping(path="createANewStock.do", method=RequestMethod.GET)
 	public ModelAndView viewCreateStockBySymbol() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("createstock");
 		return mv;
 	}
 	
-	@RequestMapping(path="createNewStock.do", method=RequestMethod.POST)
+	@RequestMapping(path="createStock.do", method=RequestMethod.POST)
 	public String createStockBySymbol(@RequestParam Stock stock, Model model) {
 		Stock s = dao.createStock(stock);
 //		if (s != null) {
 			model.addAttribute("stock", s);
-			return "stockDetail";
+			return "index";
 		}
 //		else {
 //			return "error";

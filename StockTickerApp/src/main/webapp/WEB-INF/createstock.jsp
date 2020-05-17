@@ -8,7 +8,7 @@
 <title>Stock Creation</title>
 </head>
 <body>
-	<form action="createNewStock.do" method="POST">
+	<form action="createStock.do" method="POST">
 	
 <!--   	<input type="hidden" name="id"/> -->
     Stock Symbol (Ex: AAPL):
