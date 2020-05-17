@@ -8,5 +8,5 @@ public interface StockDAO {
 	public Stock findById(int id);
 	public List<Stock> findAll();
 	public Stock findBySymbol(String symbol);
-	// list of stocks find all
+	public Stock createStock(Stock stock);
 }

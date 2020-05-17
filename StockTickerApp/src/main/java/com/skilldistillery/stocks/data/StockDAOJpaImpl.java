@@ -36,6 +36,14 @@ public class StockDAOJpaImpl implements StockDAO {
 		stock = em.createQuery(jpql, Stock.class).setParameter("symbol", symbol).getSingleResult();
 		return stock;
 	}
+
+	@Override
+	public Stock createStock(Stock stock) {
+		em.persist(stock);
+		em.flush();
+		em.close();
+		return stock;
+	}
 	
 	// ActorDAOImpl as reference.  Dont do the transaction stuff!
 	// we just do the em.persist when create

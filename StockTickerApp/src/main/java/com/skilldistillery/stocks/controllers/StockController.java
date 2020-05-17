@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.stocks.data.StockDAO;
 import com.skilldistillery.stocks.entities.Stock;
@@ -46,4 +48,23 @@ public class StockController {
 			return "error";
 		}
 	}
+	
+	@RequestMapping(path="createNewStock.do", method=RequestMethod.GET)
+	public ModelAndView viewCreateStockBySymbol() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("createstock");
+		return mv;
+	}
+	
+	@RequestMapping(path="createNewStock.do", method=RequestMethod.POST)
+	public String createStockBySymbol(@RequestParam Stock stock, Model model) {
+		Stock s = dao.createStock(stock);
+//		if (s != null) {
+			model.addAttribute("stock", s);
+			return "stockDetail";
+		}
+//		else {
+//			return "error";
+//		}
+//	}
 }

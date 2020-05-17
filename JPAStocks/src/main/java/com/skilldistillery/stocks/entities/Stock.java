@@ -19,6 +19,7 @@ public class Stock {
 	private String companyName;
 	
 	private String exchange;
+	
 	@Column(name = "may_15_2020_price")
 	private Double midMay2020Price;
 	
@@ -40,10 +41,13 @@ public class Stock {
 	// constructors
 	public Stock() {}
 	
+	public Stock(String symbol) {
+		this.symbol = symbol;
+	}
+	
 	public Stock(int id, String symbol, String companyName, String exchange, Double midMay2020Price,
 			Double dividendYield, Double fiftyTwoWeekHigh, Double fiftyTwoWeekLow, Double analystPriceTarget,
 			String analystPtUpside) {
-		super();
 		this.id = id;
 		this.symbol = symbol;
 		this.companyName = companyName;

@@ -15,6 +15,12 @@
   		Search for a Stock by Symbol (example: AAL): $<input type="text" name="symbol" />
   		<input type="submit" value="Show Stock" />
 	</form>
+	<form action="createStockView.do" method="GET">
+  		Create a Stock
+  		<input type="submit" value="Create A Stock" />
+	</form>
+	
+	
 	
 	<ul>
 		<c:forEach var="stock" items="${stocks}">
