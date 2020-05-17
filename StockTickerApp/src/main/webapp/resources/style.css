@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+body {
+	background: url(https://s3-us-west-2.amazonaws.com/rpmmultisite/wp-content/uploads/sites/114/2016/05/13182043/stock-market-wallpaper-background-2.jpg);
+	color: white;
+	
+}
+
+h1 {
+	color: #92fdb2;
+	text-align: center;
+}
+
+
+.jumbotron {
+	background: url(https://s3-us-west-2.amazonaws.com/rpmmultisite/wp-content/uploads/sites/114/2016/05/13182043/stock-market-wallpaper-background-2.jpg);
+}

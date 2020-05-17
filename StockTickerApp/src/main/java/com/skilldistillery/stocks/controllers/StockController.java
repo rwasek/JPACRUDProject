@@ -71,8 +71,10 @@ public class StockController {
 	
 	@RequestMapping(path="deleteStock.do", method=RequestMethod.POST)
 	public String deleteStock(String stockSymbol, Model model) {
-		dao.deleteStock(stockSymbol);
-		return "deleteSuccess";
+		boolean deleteSuccess = dao.deleteStock(stockSymbol);
+		model.addAttribute("result", deleteSuccess);
+//		return "deleteSuccess";
+		return "index";
 	}
 	
 	@RequestMapping(path="updateStockView.do", method=RequestMethod.POST)

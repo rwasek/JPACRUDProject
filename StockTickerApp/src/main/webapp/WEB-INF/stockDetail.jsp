@@ -7,30 +7,39 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="resources/style.css">
 <title>Stock details</title>
 </head>
 <body>
-	<h1>Ticker Symbol: $${stock.symbol}</h1>
-	<p>Company Name: ${stock.companyName}<p>
-	<p>Exchange: ${stock.exchange}<p>
-	<p>Price as of May 15th, 2020: <fmt:formatNumber value="${stock.midMay2020Price}" type="currency"/></p>
-	<p>Annual Dividend/Yield: ${stock.dividendYield}%</p>
-	<p>52-Week High: <fmt:formatNumber value="${stock.fiftyTwoWeekHigh}" type="currency"/></p>
-	<p>52-Week Low: <fmt:formatNumber value="${stock.fiftyTwoWeekLow}" type="currency"/></p>
-	<p>Average Analyst Price Target: <fmt:formatNumber value="${stock.analystPriceTarget}" type="currency"/></p>
-	<p>Analyst PT Upside/Downside: ${stock.analystPtUpside}</p>
+	<header>
+	<nav>	
+		<form action="home.do" method="GET">
+	  		<input type="submit" value="Back to Home!"/>
+		</form>
+		<form action="deleteStock.do" method="POST">
+	  		<input type="hidden" value="${stock.symbol}" name="stockSymbol"/>
+	  		<input type="submit" value="Delete This Stock"/>
+		</form>
+		<form action="updateStockView.do" method="POST">
+	  		<input type="hidden" value="${stock.id}" name="sid"/>
+	  		<input type="submit" value="Update This Stock"/>
+		</form>
+	</nav>
+	</header>
+		<table>
+		  
+			<tr><td>Ticker Symbol:</td><td>$${stock.symbol}</td></tr>
+			<tr><td>Company Name: ${stock.companyName}</td></tr>
+			<tr><td>Exchange: ${stock.exchange}</td></tr>
+			<tr><td>Price as of May 15th, 2020: <fmt:formatNumber value="${stock.midMay2020Price}" type="currency"/></td></tr>
+			<tr><td>Annual Dividend/Yield: ${stock.dividendYield}%</td></tr>
+			<tr><td>52-Week High: <fmt:formatNumber value="${stock.fiftyTwoWeekHigh}" type="currency"/></td></tr>
+			<tr><td>52-Week Low: <fmt:formatNumber value="${stock.fiftyTwoWeekLow}" type="currency"/></td></tr>
+			<tr><td>Average Analyst Price Target: <fmt:formatNumber value="${stock.analystPriceTarget}" type="currency"/></td></tr>
+			<tr><td>Analyst PT Upside/Downside: ${stock.analystPtUpside}</td></tr>
+		 
+		</table>
 	
-	<form action="home.do" method="GET">
-  		<input type="submit" value="Back to Home!"/>
-	</form>
-	<form action="deleteStock.do" method="POST">
-  		<input type="hidden" value="${stock.symbol}" name="stockSymbol"/>
-  		<input type="submit" value="Delete This Stock"/>
-	</form>
-	<form action="updateStockView.do" method="POST">
-  		<input type="hidden" value="${stock.id}" name="sid"/>
-  		<input type="submit" value="Update This Stock"/>
-	</form>
 	
 	<!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
