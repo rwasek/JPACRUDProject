@@ -82,9 +82,10 @@ public class StockController {
 		return "updatefilm";
 	}
 	
-//	@RequestMapping(path="updateStock.do", method= {RequestMethod.GET, RequestMethod.POST})
-//	public String updateStock(@RequestParam Integer sid, Stock stockToUpdate, Model model) {
-//		Stock updatedStock = dao.updateStock(sid, stockToUpdate);
-//		return "updatefilm";
-//	}
+	@RequestMapping(path="updateStock.do", method= RequestMethod.POST)
+	public String updateStock(@RequestParam Integer sid, Stock stockToUpdate, Model model) {
+		Stock updatedStock = dao.updateStock(sid, stockToUpdate);
+		model.addAttribute("stock", updatedStock);
+		return "stockDetail";
+	}
 }
