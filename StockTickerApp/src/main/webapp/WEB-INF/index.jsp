@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="resources/style.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
 
 <title>Stock Ticker Info Home</title>
 </head>
@@ -53,14 +53,14 @@
   		<input type="submit" value="Delete This Stock"/>
 	</form>
 	
-	
-	
-	<ul>
-		<c:forEach var="stock" items="${stocks}">
-  			<li><a href="getStock.do?sid=${stock.id}">${stock.symbol}</a></li>
-  			<br>
-		</c:forEach>
-	</ul>
+	<div class="container">
+		<h1>Current Portfolio:</h1>
+		<ul class="list-group-success">
+			<c:forEach var="stock" items="${stocks}">
+	  			<li class="list-group-item"><a href="getStock.do?sid=${stock.id}"><h3>${stock.symbol} - ${stock.companyName}</h3></a></li>
+			</c:forEach>
+		</ul>
+	</div>
 	</c:otherwise>
 	</c:choose>
 	</div>
