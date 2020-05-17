@@ -9,4 +9,6 @@ public interface StockDAO {
 	public List<Stock> findAll();
 	public Stock findBySymbol(String symbol);
 	public Stock createStock(Stock stock);
+	public boolean deleteStock(String symbol);
+	public Stock updateStock(int id, Stock stock);
 }

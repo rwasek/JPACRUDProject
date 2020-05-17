@@ -21,7 +21,7 @@ USE `stockdb` ;
 DROP TABLE IF EXISTS `stock` ;
 
 CREATE TABLE IF NOT EXISTS `stock` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `symbol` VARCHAR(45) NOT NULL,
   `company_name` VARCHAR(45) NOT NULL,
   `exchange` VARCHAR(45) NOT NULL,

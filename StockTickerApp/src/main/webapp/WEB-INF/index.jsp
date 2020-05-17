@@ -12,12 +12,17 @@
 	<h1>Welcome to the Stock Ticker App!</h1>
 	
 	<form action="getStockSymbol.do" method="GET">
-  		Search for a Stock by Symbol (example: AAL): $<input type="text" name="symbol" />
+  		Search for a Stock by Symbol (example: AAL): $<input type="text" name="stockSymbol" />
   		<input type="submit" value="Show Stock" />
 	</form>
 	<form action="createANewStock.do" method="GET">
   		Create a Stock
   		<input type="submit" value="Create A Stock" />
+	</form>
+	<form action="deleteStock.do" method="POST">
+		Delete a Stock by Symbol (example: CCL):
+  		<input type="text" name="stockSymbol"/>
+  		<input type="submit" value="Delete This Stock"/>
 	</form>
 	
 	

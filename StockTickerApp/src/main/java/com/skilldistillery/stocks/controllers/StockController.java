@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,16 +31,16 @@ public class StockController {
 	}
 	
 	
-	@RequestMapping(path="getStock.do")
+	@RequestMapping(path="getStock.do", method=RequestMethod.GET)
 	public String findStock(@RequestParam Integer sid, Model model) {
 		Stock s = dao.findById(sid);
 		model.addAttribute("stock", s);
 		return "stockDetail";
 	}
 	
-	@RequestMapping(path="getStockSymbol.do")
-	public String findStockBySymbol(@RequestParam String symbol, Model model) {
-		Stock s = dao.findBySymbol(symbol);
+	@RequestMapping(path="getStockSymbol.do", method=RequestMethod.GET)
+	public String findStockBySymbol(@RequestParam String stockSymbol, Model model) {
+		Stock s = dao.findBySymbol(stockSymbol);
 		if (s != null) {
 		model.addAttribute("stock", s);
 		return "stockDetail";
@@ -50,21 +51,40 @@ public class StockController {
 	}
 	
 	@RequestMapping(path="createANewStock.do", method=RequestMethod.GET)
-	public ModelAndView viewCreateStockBySymbol() {
+	public ModelAndView viewCreateStock() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("createstock");
 		return mv;
 	}
 	
 	@RequestMapping(path="createStock.do", method=RequestMethod.POST)
-	public String createStockBySymbol(@RequestParam Stock stock, Model model) {
+	public String createStock(Stock stock, Model model) {
 		Stock s = dao.createStock(stock);
 //		if (s != null) {
 			model.addAttribute("stock", s);
-			return "index";
+			return "stockDetail";
 		}
 //		else {
 //			return "error";
 //		}
+//	}
+	
+	@RequestMapping(path="deleteStock.do", method=RequestMethod.POST)
+	public String deleteStock(String stockSymbol, Model model) {
+		dao.deleteStock(stockSymbol);
+		return "deleteSuccess";
+	}
+	
+	@RequestMapping(path="updateStockView.do", method=RequestMethod.POST)
+	public String updateStockPage(@RequestParam Integer sid, Model model) {
+		Stock stockToUpdate = dao.findById(sid);
+		model.addAttribute("stock", stockToUpdate);
+		return "updatefilm";
+	}
+	
+//	@RequestMapping(path="updateStock.do", method= {RequestMethod.GET, RequestMethod.POST})
+//	public String updateStock(@RequestParam Integer sid, Stock stockToUpdate, Model model) {
+//		Stock updatedStock = dao.updateStock(sid, stockToUpdate);
+//		return "updatefilm";
 //	}
 }

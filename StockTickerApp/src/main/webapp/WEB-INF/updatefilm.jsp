@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Stock Creation</title>
+<title>Update Film</title>
 </head>
 <body>
-	<form action="createStock.do" method="POST">
-	
-	
+<form action="updateStock.do" method="POST">
+
     Stock Symbol (Ex: AAPL):
-    <input type="text" name="symbol"/>
+    <input type="text" value="${stock.symbol}" name="symbol"/>
     <br> 
     Company Name:
-    <input type="text" name="companyName"/>
+    <input type="text" value="hello" name="companyName"/>
     <br> 
     Exchange (Ex: NASDAQ, NYSE, OTC):
     <input type="text" name="exchange"/>
@@ -39,7 +39,8 @@
     <input type="text" name="analystPtUpside"/>
     <br>
     
-    <input type="submit" value="Add Stock Data"/>
+    <input type="submit" value="Update Stock"/>
   </form>
+</form>
 </body>
 </html>

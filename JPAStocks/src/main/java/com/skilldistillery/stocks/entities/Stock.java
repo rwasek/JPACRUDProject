@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Stock {
-
+// add validation annotations
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

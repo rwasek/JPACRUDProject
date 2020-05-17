@@ -19,9 +19,19 @@
 	<p>52-Week Low: <fmt:formatNumber value="${stock.fiftyTwoWeekLow}" type="currency"/></p>
 	<p>Average Analyst Price Target: <fmt:formatNumber value="${stock.analystPriceTarget}" type="currency"/></p>
 	<p>Analyst PT Upside/Downside: ${stock.analystPtUpside}</p>
+	
 	<form action="home.do" method="GET">
-  		<input type="submit" value="Back to Home!" />
+  		<input type="submit" value="Back to Home!"/>
 	</form>
+	<form action="deleteStock.do" method="POST">
+  		<input type="hidden" value="${stock.symbol}" name="stockSymbol"/>
+  		<input type="submit" value="Delete This Stock"/>
+	</form>
+	<form action="updateStockView.do" method="POST">
+  		<input type="hidden" value="${stock.id}" name="sid"/>
+  		<input type="submit" value="Update This Stock"/>
+	</form>
+	
 	<!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_2b478"></div>
