@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<fmt:formatNumber value="${value}" type="currency" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,55 +11,59 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="style/style.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
 <title>Stock Ticker Info Home</title>
 </head>
 <body>
 	<div class="jumbotron">
 	<c:choose>
 	<c:when test="${result == true}">
-	<div>
+	<div class="jumbotron">
 	Stock deleted successfully!
 	</div>
 	<form action="home.do" method="GET">
-  		<input type="submit" value="Back to Home!"/>
+		<button type="button" class="btn btn-success">
+  		<input type="submit" value="Back to Home"/>
+  		</button>
 	</form>
 	</c:when>
 	<c:otherwise>
 	
-	
 
-  <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for
-                  calling extra attention to featured content or information.</p>
-  <hr class="my-2">
-  <p>It uses utility classes for typography and
-     spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#!" role="button">Some action</a>
-  </p> -->
-
-	
 	<h1 class="display-3">Welcome to the Stock Ticker App!</h1>
-
-	<form action="getStockSymbol.do" method="GET">
-  		Search for a Stock by Symbol (example: AAL): $<input type="text" name="stockSymbol" />
-  		<input type="submit" value="Show Stock" />
-	</form>
-	<form action="createANewStock.do" method="GET">
-  		Create a Stock
-  		<input type="submit" value="Create A Stock" />
-	</form>
-	<form action="deleteStock.do" method="POST">
-		Delete a Stock by Symbol (example: CCL):
-  		<input type="text" name="stockSymbol"/>
-  		<input type="submit" value="Delete This Stock"/>
-	</form>
-	
+	<br>
+	<div class="container">
+		<form action="getStockSymbol.do" method="GET">
+			<div class="form-group">
+	  		<h4>Search for a Stock by Symbol (example: AAL): </h4><input type="text" name="stockSymbol" />
+	  		<button type="button" class="btn btn-success">
+	  		<input type="submit" value="Show Stock" class="form-control"/>
+	  		</button>
+	  		</div>
+		</form>
+		<form action="createANewStock.do" method="GET">
+			<div class="form-group">
+	  		<h4>Create a Stock</h4>
+	  		<button type="button" class="btn btn-success">
+	  		<input type="submit" value="Create A Stock" class="form-control"/>
+	  		</button>
+	  		</div>
+		</form>
+		<form action="deleteStock.do" method="POST">
+			<div class="form-group">
+			<h4>Delete a Stock by Symbol (example: CCL): </h4><input type="text" name="stockSymbol" class="form-control"/>
+			<button type="button" class="btn btn-success">
+	  		<input type="submit" value="Delete This Stock" class="form-control"/>
+	  		</button>
+	  		</div>
+		</form>
+	</div>
 	<div class="container">
 		<h1>Current Portfolio:</h1>
-		<ul class="list-group-success">
+		<br>
+		<ul class="list-group">
 			<c:forEach var="stock" items="${stocks}">
-	  			<li class="list-group-item"><a href="getStock.do?sid=${stock.id}"><h3>${stock.symbol} - ${stock.companyName}</h3></a></li>
+	  			<li class="list-group-item"><a href="getStock.do?sid=${stock.id}"><h3>$${stock.symbol} - ${stock.companyName} - <fmt:formatNumber value="${stock.midMay2020Price}" type="currency"/></h3></a></li>
 			</c:forEach>
 		</ul>
 	</div>
