@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Stock {
-// add validation annotations
+// TODO: Finish up annotations and then change forms to form:form
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

@@ -31,7 +31,7 @@
 	 		</a>
 		</nav>
 	</header>
-	<div class="jumbotron">
+	<div class="container">
 		<form action="createStock.do" method="POST">
 			<h1>Create A Stock</h1>
 		    <h4>Stock Symbol (Ex: AAPL):</h4>
