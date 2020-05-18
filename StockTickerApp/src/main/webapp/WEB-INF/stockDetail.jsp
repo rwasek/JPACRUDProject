@@ -21,7 +21,7 @@
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		<a class="navbar-brand" href="#">
     	<img src="https://i.pinimg.com/originals/65/28/da/6528da74c569a3aca4160ba813d93720.jpg" alt="Logo" style="width:40px;">
- 		 </a>	
+ 		</a>	
 		<h4 class="stockview">$${stock.symbol} Ticker Details</h4>
 		<form action="home.do" method="GET">
 	  		<input type="submit" value="Back to Home"/>
@@ -34,6 +34,15 @@
 	  		<input type="hidden" value="${stock.id}" name="sid"/>
 	  		<input type="submit" value="Update This Stock"/>
 		</form>
+		<a class="navbar-brand" id="tdalogo" href="http://www.tdameritrade.com" target="_blank">
+    	<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/25/77/8c/25778c62-cc88-5c99-5524-bcdc465190fd/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" alt="Logo" style="width:40px;">
+ 		</a>
+		<a class="navbar-brand" id="fidelitylogo" href="http://www.fidelity.com" target="_blank">
+    	<img src="https://media-exp1.licdn.com/dms/image/C4E0BAQFBVOZ626AFWQ/company-logo_200_200/0?e=2159024400&v=beta&t=4waP0UJCoAMBtgLFwwFMlIk_bj_ovJAc06m65B_65co" alt="Logo" style="width:40px;">
+ 		</a>
+		<a class="navbar-brand" id="robinhoodlogo" href="http://www.robinhood.com" target="_blank">
+    	<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/06/e3/de/06e3de3b-ef53-cba0-0630-194b0faad508/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/320x0w.jpg" alt="Logo" style="width:40px;">
+ 		</a>
 		<h4 class="chartView">${stock.companyName} Interactive Chart:</h4>
 	</nav>
 	</header>
@@ -45,7 +54,7 @@
 						<tr><td>Company Name: ${stock.companyName}</td></tr>
 						<tr><td>Exchange: ${stock.exchange}</td></tr>
 						<tr><td>Price as of May 15th, 2020: <fmt:formatNumber value="${stock.midMay2020Price}" type="currency"/></td></tr>
-						<tr><td>Annual Dividend/Yield: ${stock.dividendYield}%</td></tr>
+						<tr><td>Annual Dividend/Yield Percentage: ${stock.dividendYield}%</td></tr>
 						<tr><td>52-Week High: <fmt:formatNumber value="${stock.fiftyTwoWeekHigh}" type="currency"/></td></tr>
 						<tr><td>52-Week Low: <fmt:formatNumber value="${stock.fiftyTwoWeekLow}" type="currency"/></td></tr>
 						<tr><td>Average Analyst Price Target: <fmt:formatNumber value="${stock.analystPriceTarget}" type="currency"/></td></tr>

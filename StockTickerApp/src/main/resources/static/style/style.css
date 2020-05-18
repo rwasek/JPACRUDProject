@@ -21,12 +21,17 @@ h4 {
 	text-shadow: 5px 5px 4px red;
 	font-size: 32px;
 }
-.jumbotron {
-	background: url(https://s3-us-west-2.amazonaws.com/rpmmultisite/wp-content/uploads/sites/114/2016/05/13182043/stock-market-wallpaper-background-2.jpg);
+
+td {
+	font-family: 'Oswald', sans-serif;
+	font-size: 25px;
 }
+
 
 .list-group-item {
 	text-align: center;
+	background: rgba(76, 175, 80, 0.1);
+	
 }
 
 .stockview {
@@ -34,5 +39,19 @@ h4 {
 }
 
 .chartView {
-	margin-left: 200px;
+	margin-left: 20px;
 }
+
+#tdalogo {
+	margin-left: 20px;
+}
+
+#homepage {
+	background: url(https://www.thestreet.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY4ODEyNzUxOTI0MjQxNjA1/ts_nyse_stock_market_bull_1.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	
+}
+
+
+
