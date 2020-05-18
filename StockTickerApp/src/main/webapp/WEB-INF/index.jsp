@@ -50,7 +50,7 @@
 		<form action="getStockSymbol.do" method="GET">
 			<div class="form-group">
 	  		<h4>Search for a Stock by Symbol (example: AAL): </h4><input type="text" name="stockSymbol" />
-	  		<button type="button" class="btn btn-success">
+	  		<button type="button" class="btn btn-info">
 	  		<input type="submit" value="Show Stock" class="form-control"/>
 	  		</button>
 	  		</div>
@@ -66,7 +66,7 @@
 		<form action="deleteStock.do" method="POST">
 			<div class="form-group">
 			<h4>Delete a Stock by Symbol (example: CCL): </h4><input type="text" name="stockSymbol" class="form-control"/>
-			<button type="button" class="btn btn-success">
+			<button type="button" class="btn btn-danger">
 	  		<input type="submit" value="Delete This Stock" class="form-control"/>
 	  		</button>
 	  		</div>

@@ -14,7 +14,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="https://github.com/rwasek?tab=repositories"  target="_blank">
 	    		<img src="https://i.pinimg.com/originals/65/28/da/6528da74c569a3aca4160ba813d93720.jpg" alt="Logo" style="width:40px;">
 	 		</a>	
 			<form action="home.do" method="GET">
