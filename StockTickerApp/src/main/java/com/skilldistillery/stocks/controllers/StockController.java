@@ -81,7 +81,7 @@ public class StockController {
 	public String updateStockPage(@RequestParam Integer sid, Model model) {
 		Stock stockToUpdate = dao.findById(sid);
 		model.addAttribute("stock", stockToUpdate);
-		return "updatefilm";
+		return "updateStock";
 	}
 	
 	@RequestMapping(path="updateStock.do", method= RequestMethod.POST)
