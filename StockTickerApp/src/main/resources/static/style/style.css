@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-	color: #92fdb2;
+	color: #b2fee1;
 	text-shadow: 5px 5px 4px blue;
 	text-align: center;
 	font-family: 'Oswald', sans-serif;
@@ -16,9 +16,9 @@ h1 {
 }
 
 h4 {
-	color: #e8dd03;
+	color: #4fe803;
 	font-family: 'Oswald', sans-serif;
-	text-shadow: 5px 5px 4px red;
+	text-shadow: 4px 3px 3px #505956;
 	font-size: 32px;
 }
 
@@ -27,11 +27,20 @@ td {
 	font-size: 25px;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 
 .list-group-item {
 	text-align: center;
 	background: rgba(76, 175, 80, 0.1);
 	
+}
+
+.list-group-item:hover {
+	background-color: rgba(66, 72, 67, 0.8);
+	text-decoration: none;
 }
 
 .stockview {
@@ -42,12 +51,20 @@ td {
 	margin-left: 20px;
 }
 
+#crudBtn {
+	width: 20%;
+}
+
+#crud {
+	text-align: center;
+}
+
 #tdalogo {
 	margin-left: 20px;
 }
 
 #homepage {
-	background: url(https://www.thestreet.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTY4ODEyNzUxOTI0MjQxNjA1/ts_nyse_stock_market_bull_1.jpg);
+	background: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-25d-financial-investment-finance-background-template-image_200943.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 }

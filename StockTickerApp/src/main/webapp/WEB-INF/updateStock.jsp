@@ -19,7 +19,7 @@
 	    		<img src="https://i.pinimg.com/originals/65/28/da/6528da74c569a3aca4160ba813d93720.jpg" alt="Logo" style="width:40px;">
 	 		</a>	
 			<form action="home.do" method="GET">
-		  		<input type="submit" value="Back to Home"/>
+		  		<input type="submit" value="Back to Home" class="btn btn-info"/>
 			</form>
 			<a class="navbar-brand" id="tdalogo" href="http://www.tdameritrade.com" target="_blank">
 	    		<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/25/77/8c/25778c62-cc88-5c99-5524-bcdc465190fd/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" alt="Logo" style="width:40px;">

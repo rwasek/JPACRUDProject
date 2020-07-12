@@ -23,7 +23,7 @@
 	    		<img src="https://i.pinimg.com/originals/65/28/da/6528da74c569a3aca4160ba813d93720.jpg" alt="Logo" style="width:40px;">
 	 		</a>	
 			<form action="home.do" method="GET">
-		  		<input type="submit" value="Back to Home"/>
+		  		<input type="submit" value="Back to Home" class="btn btn-info"/>
 			</form>
 			<a class="navbar-brand" id="tdalogo" href="http://www.tdameritrade.com" target="_blank">
 	    		<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/25/77/8c/25778c62-cc88-5c99-5524-bcdc465190fd/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" alt="Logo" style="width:40px;">
@@ -45,29 +45,23 @@
 
 	<h1 class="display-3">Welcome to the Stock Ticker App!</h1>
 	<br>
-	<div class="container">
+	<div class="container" id="crud">
 		<form action="getStockSymbol.do" method="GET">
-			<div class="form-group">
-	  		<h4>Search for a Stock by Symbol (example: AAL): </h4><input type="text" name="stockSymbol" />
-	  		<button type="button" class="btn btn-info">
-	  		<input type="submit" value="Show Stock" class="form-control"/>
-	  		</button>
+			<div class="form-group container">
+	  		<h4>Search for a Stock by Symbol (example: AAL): </h4><input type="text" name="stockSymbol"/>
+	  		<input type="submit" value="Show Stock" class="form-control btn btn-info" id="crudBtn"/>
 	  		</div>
 		</form>
 		<form action="createANewStock.do" method="GET">
-			<div class="form-group">
+			<div class="form-group container">
 	  		<h4>Create a Stock</h4>
-	  		<button type="button" class="btn btn-success">
-	  		<input type="submit" value="Create A Stock" class="form-control"/>
-	  		</button>
+	  		<input type="submit" value="Create A Stock" class="form-control btn btn-success" id="crudBtn"/>
 	  		</div>
 		</form>
 		<form action="deleteStock.do" method="POST">
-			<div class="form-group">
-			<h4>Delete a Stock by Symbol (example: CCL): </h4><input type="text" name="stockSymbol" class="form-control"/>
-			<button type="button" class="btn btn-danger">
-	  		<input type="submit" value="Delete This Stock" class="form-control"/>
-	  		</button>
+			<div class="form-group container">
+			<h4>Delete a Stock by Symbol (example: CCL): </h4><input type="text" name="stockSymbol"/>
+	  		<input type="submit" value="Delete This Stock" class="form-control btn btn-danger" id="crudBtn"/>
 	  		</div>
 		</form>
 	</div>
